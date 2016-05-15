@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="<?=$this->baseUrl()?>/css/bootstrap.css">
+<link rel="stylesheet" href="<?=$this->baseUrl()?>/css/font-awesome.css">
+<link rel="stylesheet" href="<?=$this->baseUrl()?>/css/templatemo_style.css">
+<link rel="stylesheet" href="<?=$this->baseUrl()?>/css/templatemo_misc.css">
+<link rel="stylesheet" href="<?=$this->baseUrl()?>/css/flexslider.css">
+<link rel="stylesheet" href="<?=$this->baseUrl()?>/css/testimonails-slider.css">
+<script src="<?=$this->baseUrl()?>/js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+<?php
+foreach ($this->material as $material){
+	// echo "<label> name: </label>".$material['id'].'<br />';
+	echo "<label> name: </label>".$material['name'].'<br />';
+	echo "<img  align='center'  width='200' height='300' src='".$this->baseUrl()."/upload/material/".$material['name']."'/><br/>";
+	
+
+}
+?>
+ 
+   
+
+<script src="<?=$this->baseUrl()?>/js/jquery-1.11.0.min.js"></script>
+<script src="<?=$this->baseUrl()?>/js/jquery.gmap3.min.js"></script>
+<script src="<?=$this->baseUrl()?>/js/plugins.js"></script>
+<script src="<?=$this->baseUrl()?>/js/main.js"></script>

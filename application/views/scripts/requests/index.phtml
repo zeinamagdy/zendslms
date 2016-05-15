@@ -1,0 +1,58 @@
+<link rel="stylesheet" type="text/css" href="<?=$this->baseUrl()?>/css/bootstrap.css">
+<!-- Custom CSS -->
+<link href="<?=$this->baseUrl()?>/css/sb-admin.css" rel="stylesheet">
+<!-- Morris Charts CSS -->
+<link href="<?=$this->baseUrl()?>/css/morris.css" rel="stylesheet">
+<!-- Custom Fonts -->
+<link href="<?=$this->baseUrl()?>/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+<br /><br />
+<div id="view-content">
+	<!-- <p>View script for controller <b>Requests</b> and script/action name <b>index</b></p> -->
+	<h2 style="margin-top:20px "> <b> List all requests :  <b> </h2>
+
+</div>
+
+<?php
+	
+	echo "<a style='margin-left:500px'href='".$this->baseUrl()."/requests/list'> list all unread requests </a><br><br>";
+	foreach ($this->requests as $req)
+	{
+		if($req['is_read'] == 0)
+		{
+			$mark = "Read ";
+		}
+		else
+		{
+			$mark = "Unread";
+		}
+
+
+		
+	// echo "<label> <b> ID: </b> </label>".$req['id'].'<br />';
+	echo "<label style='color:orange'> <b> RequestContent : </b> </label>".$req['content'].'<br />';
+
+	
+	echo "<a style='margin-left:500px' href='".$this->baseUrl()."/requests/delete/id/".$req['id']."'> Delete </a> "."<a href='".$this->baseUrl()."/requests/mark/id/".$req['id']."'> ".$mark."</a> <br />";
+
+	
+	
+	echo "<label> <b> From : </b> </label>".$req['name']."";
+	
+	
+	echo "<hr>";
+	
+		
+	}
+	// var_dump($this->uname);
+	// echo "<h3> New Request</h3>";
+	// echo "<a href='".$this->baseUrl()."/requests/add/'> NewRequest </a>";
+
+?>
+
+
+<script src="<?=$this->baseUrl()?>/js/jquery.js"></script>
+    <script src="<?=$this->baseUrl()?>/js/raphael.min.js"></script>
+    <script src="<?=$this->baseUrl()?>/js/morris.min.js"></script>
+    <script src="<?=$this->baseUrl()?>/js/morris-data.js"></script>
